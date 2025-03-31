@@ -25,7 +25,7 @@ def main(args):
     
     if not (args.log_dir == None):
         print("Load checkpoint from " + args.log_dir)
-        checkpoint = torch.load(args.log_dir, map_location="cpu")    
+        checkpoint = torch.load(args.log_dir, map_location="cpu", weights_only=False)    
     
     model = HRCenterNet()
     model.load_state_dict(checkpoint['model'])
